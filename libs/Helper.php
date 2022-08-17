@@ -41,4 +41,10 @@ class Helper
         }
         return $xhtml;
     }
+
+    public static function highlightSearch($keyword, $string)
+    {
+        $xhtml = !empty($keyword) ? preg_replace("#$keyword#ui", "<mark class='p-0 bg-warning'>$0</mark>", $string) : $string;
+        return $xhtml;
+    }
 }

@@ -12,25 +12,30 @@ class UserController extends Controller
 
 	public function loginAction()
 	{
-		if(isset($this->_arrParam['_token'])){
+		if (isset($this->_arrParam['_token'])) {
 			$resultLogin = $this->_model->login($this->_arrParam);
-			if($resultLogin != null){
-				if(!empty($this->_arrParam['remember'])){
-					setcookie('remember_email', $resultLogin['email'], time() + COOKIE_TIME_LOGIN);
-					setcookie('remember_pass', $resultLogin['password'], time() + COOKIE_TIME_LOGIN);
+			if ($resultLogin != null) {
+				// Check if user choose "Remember me" => set cookie
+				if (!empty($this->_arrParam['remember'])) {
+					setcookie('remember_email', $resultLogin['email'], COOKIE_TIME_LOGIN);
+					setcookie('remember_pass', $resultLogin['password'], COOKIE_TIME_LOGIN);
+				} 
+				// Check if user is not choose "Remember me" => set cookie is null <=> delete cookie
+				elseif (isset($_COOKIE['remember_email'])) {
+					setcookie('remember_email', '', time() - 3600);
+					setcookie('remember_pass', '', time() - 3600);
 				}
 				URL::direct(DEFAULT_MODULE, DEFAULT_CONTROLLER, DEFAULT_ACTION);
-				
-			}else{
+			} else {
 				$_SESSION['login_failed'] = 'Incorrect account or password ! Please try again.';
 			}
 		}
 		$this->_view->render('user/login', true);
 	}
 
-    public function registerAction()
+	public function registerAction()
 	{
-		if(isset($this->_arrParam['_token'])){
+		if (isset($this->_arrParam['_token'])) {
 			$source = [
 				'fullName' => $this->_arrParam['fullName'],
 				'email' => $this->_arrParam['email'],
@@ -39,8 +44,8 @@ class UserController extends Controller
 			$validate = new Validate($source);
 			$arrEmails	= array_column($this->_model->list($this->_arrParam, 'email'), 'email');
 			$validate->addRule('fullName', 'string', ['min' => 1, 'max' => 50])
-					->addRule('email', 'email', $arrEmails)
-					->addRule('password', 'password', $this->_arrParam['re_password']);
+				->addRule('email', 'email', $arrEmails)
+				->addRule('password', 'password', $this->_arrParam['re_password']);
 			$validate->run();
 			$this->_view->results = $validate->getResult();
 			$params = $validate->getResult();
@@ -56,9 +61,9 @@ class UserController extends Controller
 		$this->_view->render('user/register', true);
 	}
 
-	public function logoutAction(){
+	public function logoutAction()
+	{
 		session_destroy();
 		URL::direct(DEFAULT_MODULE, USER_CONTROLLER, USER_LOGIN_ACTION);
 	}
-
 }

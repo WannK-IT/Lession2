@@ -17,8 +17,8 @@ if (!empty($listUsers)) {
         $urlView  = URL::createLink(DEFAULT_MODULE, DEFAULT_CONTROLLER, 'view', ['id' => $infoUser['id']]);
         $xhtmlUser .= '<tr>
                 <td class="text-center">' . $index . '</td>
-                <td class="text-center">' . $infoUser['fullName'] . '</td>
-                <td class="text-center">' . $infoUser['email'] . '</td>
+                <td class="text-left">' . Helper::highlightSearch(trim($this->arrParam['search'] ?? ''), $infoUser['fullName']) . '</td>
+                <td class="text-left">' . $infoUser['email'] . '</td>
                 <td class="text-center">' . $infoUser['role_name'] . '</td>
                 <td class="text-center">';
 
