@@ -1,13 +1,10 @@
 <?php
 class Template{
 	
-	// File template (admin/main/inde.php)
 	private $_fileTemplate;
 	
-	// Folder template (admin/main/)
 	private $_folderTemplate;
 	
-	// Controller Object
 	private $_controller;
 	
 	public function __construct($controller){
@@ -37,7 +34,7 @@ class Template{
 	}
 	
 	// SET FOLDER TEMPLATE (default/main/)
-	public function setFolderTemplate($value = 'default/main/'){
+	public function setFolderTemplate($value = 'backend/'){
 		$this->_folderTemplate = $value;
 	}
 	

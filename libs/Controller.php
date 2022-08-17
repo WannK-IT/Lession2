@@ -77,7 +77,7 @@ class Controller
 		$this->_arrParam = $arrParam;
 	}
 
-	public function redirect($module = 'backend', $controller = 'index', $action = 'index')
+	public function redirect($module = 'backend', $controller = 'home', $action = 'index')
 	{
 		header("location: index.php?module=$module&controller=$controller&action=$action");
 		exit();
