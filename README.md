@@ -16,23 +16,23 @@
 <ol>
     <li>
         <p>Login page</p>
-        <img src="images/demo_login.png">
+        <img src="img/demo_login.png">
     </li>
     <li>
         <p>Register page</p>
-        <img src="images/demo_reg.png">
+        <img src="img/demo_reg.png">
     </li>
     <li>
         <p>Home page</p>
-        <img src="images/demo_home.png">
+        <img src="img/demo_home.png">
     </li>
     <li>
         <p>Edit page</p>
-        <img src="images/demo_edit.png">
+        <img src="img/demo_edit.png">
     </li>
     <li>
         <p>View page</p>
-        <img src="images/demo_view.png">
+        <img src="img/demo_view.png">
     </li>
 </ol>
 
