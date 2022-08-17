@@ -10,6 +10,12 @@
     </li>
     <li>Run project. Recommend run on Chrome browser.</li>
     <li>For example my local URL: http://localhost/Lession2/index.php</li>
+    <li><b>ACCOUNT LOGIN ADMIN:</b> 
+        <ul>
+            <li><b>email:</b> admin@gmail.com</li>
+            <li><b>password</b>: admin</li>
+        </ul>
+    </li>
 </ol>
 
 <h2>Images Demo</h2>
