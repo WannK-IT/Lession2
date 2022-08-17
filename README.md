@@ -1,6 +1,6 @@
 <h2>CONFIGURATION</h2>
 <ol>
-    <li>Clone project in "test" branch by command: git clone -b test https://github.com/WannK-IT/Lession2.git</li>
+    <li>Clone project in branch "test" to xampp/htdocs by command: git clone -b test https://github.com/WannK-IT/Lession2.git</li>
     <li>Create database name is "manage_user" in your local.</li>
     <li>Import file "manager_user.sql" in folder "database" of project.</li>
     <li>Run project</li>
