@@ -10,6 +10,7 @@
 <h2>Images Demo</h2>
 <ol>
     <li><p>Login page</p></li>
+    <img src="https://user-images.githubusercontent.com/65084795/185153779-20f7ba92-9264-4c0c-b69a-996261831f02.png">
     ![demo_login](https://user-images.githubusercontent.com/65084795/185153779-20f7ba92-9264-4c0c-b69a-996261831f02.png)
     <li><p>Register page</p></li>
     ![demo_reg](https://user-images.githubusercontent.com/65084795/185153841-0dc85529-1615-48c0-a211-30d81a419905.png)
