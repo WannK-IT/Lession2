@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 17, 2022 at 11:19 AM
+-- Generation Time: Aug 17, 2022 at 02:19 PM
 -- Server version: 5.7.33
 -- PHP Version: 8.0.19
 
@@ -62,11 +62,11 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `email`, `fullName`, `password`, `created_date`, `role_id`) VALUES
 (1, 'admin@gmail.com', 'Administrator', 'admin', '2022-08-16 13:53:27', 1),
-(2, 'user1@gmail.com', 'User 1', 'user1', '2022-08-16 15:38:47', 1),
+(2, 'user1@gmail.com', 'User 1', 'user1', '2022-08-16 15:38:47', 2),
 (3, 'user2@gmail.com', 'User 2', 'user2', '2022-08-16 15:38:47', 2),
 (4, 'user8@gmail.com', 'User 8', 'user8', '2022-08-16 16:24:31', 2),
-(15, 'user9@gmail.com', 'User 9', 'user15', '2022-08-17 04:32:06', 2),
-(16, 'user10@gmail.com', 'User 10', 'user16', '2022-08-17 05:17:08', 1);
+(15, 'user9@gmail.com', 'User 9', 'user9', '2022-08-17 04:32:06', 2),
+(16, 'user10@gmail.com', 'User 10', 'user10', '2022-08-17 05:17:08', 2);
 
 --
 -- Indexes for dumped tables
