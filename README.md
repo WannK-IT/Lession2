@@ -8,10 +8,10 @@
 </ol>
 
 <h2>Images Demo</h2>
-<ol>
-    <li><p>Login page</p>![Demo Login Image](Images/demo_login.png)</li>
-    <li><p>Register page</p>![Demo Register Image](Images/demo_reg.png)</li>
-    <li><p>Home page</p>![Demo Home Image](Images/demo_home.png)</li>
-    <li><p>Edit page</p>![Demo Edit Image](Images/demo_edit.png)</li>
-    <li><p>View page</p>![Demo View Image](Images/demo_view.png)</li>
+<ol style="font-weight: bold">
+    <li><p>Login page</p><img src="Images/demo_login.png"></li>
+    <li><p>Register page</p><img src="Images/demo_reg.png"></li>
+    <li><p>Home page</p><img src="Images/demo_home.png"></li>
+    <li><p>Edit page</p><img src="Images/demo_edit.png"></li>
+    <li><p>View page</p><img src="Images/demo_view.png"></li>
 </ol>
