@@ -10,23 +10,21 @@ class UserModel extends Model
 	public function login($arrParams)
 	{
 		$email		= mysqli_real_escape_string($this->connect, $arrParams['email']);
-		$password	= mysqli_real_escape_string($this->connect, md5($arrParams['password']));
+		$password	= mysqli_real_escape_string($this->connect, $arrParams['password']);
 		$query[] 	= "SELECT `email`, `password`, `id`, `role_id` FROM `{$this->table}`";
 		$query[] 	= "WHERE `email` = '" . $email . "' AND `password` = '" . $password . "'";
 		$query		= implode($query);
 		$result		= $this->singleRecord($query);
 
 		// Check if email & password exists
-		$flag = false;
 		if(!empty($result)){
-			$flag = true;
 			$_SESSION['flag_login']	= true;
 			$_SESSION['email'] 		= $result['email'];
 			$_SESSION['user_id'] 	= $result['id'];
 			$_SESSION['role_id'] 	= $result['role_id'];
 		}
 
-		return $flag;
+		return $result;
 	}
 
 	public function register($arrParams){

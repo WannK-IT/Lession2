@@ -9,7 +9,7 @@ class Form
     public static function createInput($name, $type, $value, $description = null)
     {
         $desc = (!empty($description)) ? '<small class="form-text text-muted">' . $description . '</small>' : '';
-        return sprintf('<input type="%s" id="%s" name="%s" value="%s" class="form-control" autocomplete="off">%s', $type, $name, $name, $value, $desc);
+        return sprintf('<input type="%s" id="%s" name="%s" value="%s" class="form-control shadow-none" autocomplete="off">%s', $type, $name, $name, $value, $desc);
     }
 
     public static function createFormSelectBox($name, $arrOptions, $keySelected = null)

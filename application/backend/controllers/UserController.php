@@ -13,11 +13,16 @@ class UserController extends Controller
 	public function loginAction()
 	{
 		if(isset($this->_arrParam['_token'])){
-			$this->_view->resultLogin = $this->_model->login($this->_arrParam);
-			if($this->_view->resultLogin == true){
+			$resultLogin = $this->_model->login($this->_arrParam);
+			if($resultLogin != null){
+				if(!empty($this->_arrParam['remember'])){
+					setcookie('remember_email', $resultLogin['email'], time() + COOKIE_TIME_LOGIN);
+					setcookie('remember_pass', $resultLogin['password'], time() + COOKIE_TIME_LOGIN);
+				}
 				URL::direct(DEFAULT_MODULE, DEFAULT_CONTROLLER, DEFAULT_ACTION);
+				
 			}else{
-				$_SESSION['login_failed'] = 'Tài khoản hoặc mật khẩu chưa chính xác !';
+				$_SESSION['login_failed'] = 'Incorrect account or password ! Please try again.';
 			}
 		}
 		$this->_view->render('user/login', true);
@@ -29,13 +34,13 @@ class UserController extends Controller
 			$source = [
 				'fullName' => $this->_arrParam['fullName'],
 				'email' => $this->_arrParam['email'],
-				'password' => md5($this->_arrParam['password'])
+				'password' => $this->_arrParam['password']
 			];
 			$validate = new Validate($source);
 			$arrEmails	= array_column($this->_model->list($this->_arrParam, 'email'), 'email');
 			$validate->addRule('fullName', 'string', ['min' => 1, 'max' => 50])
 					->addRule('email', 'email', $arrEmails)
-					->addRule('password', 'password', md5($this->_arrParam['re_password']));
+					->addRule('password', 'password', $this->_arrParam['re_password']);
 			$validate->run();
 			$this->_view->results = $validate->getResult();
 			$params = $validate->getResult();

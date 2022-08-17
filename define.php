@@ -36,4 +36,4 @@
 
 	
 	// ====================== TIME ===========================
-	define ('SESSION_TIMEOUT'		, 7200);	
+	define ('COOKIE_TIME_LOGIN'		, 60*60*6);	

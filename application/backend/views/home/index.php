@@ -24,13 +24,13 @@ if (!empty($listUsers)) {
 
         // Check if user is Admin => full per
         if ($_SESSION['role_id'] == 1) {
-            $permission = '<a href="' . $urlEdit . '" title="Chỉnh sửa"><i class="fa fa-pencil-square-o fa-lg pr-1" aria-hidden="true"></i></a>
-            <a href="' . $urlDelete . '" title="Xóa"><i class="fa fa-ban fa-lg pr-1 text-danger" aria-hidden="true"></i></a>
-            <a href="' . $urlCopy . '" title="Sao chép"><i class="fa fa-clone fa-lg pr-1" aria-hidden="true"></i></a>
-            <a href="' . $urlView . '" title="Xem thông tin"><i class="fa fa-eye fa-lg pr-1" aria-hidden="true"></i></a>';
+            $permission = '<a href="' . $urlEdit . '" title="Edit"><i class="fa fa-pencil-square-o fa-lg pr-1" aria-hidden="true"></i></a>
+            <a href="' . $urlDelete . '" title="Delete"><i class="fa fa-ban fa-lg pr-1 text-danger" aria-hidden="true"></i></a>
+            <a href="' . $urlCopy . '" title="Copy"><i class="fa fa-clone fa-lg pr-1" aria-hidden="true"></i></a>
+            <a href="' . $urlView . '" title="View"><i class="fa fa-eye fa-lg pr-1" aria-hidden="true"></i></a>';
         } else {
-            $permission = '<a href="' . $urlEdit . '" title="Chỉnh sửa"><i class="fa fa-pencil-square-o fa-lg pr-1" aria-hidden="true"></i></a>
-            <a href="' . $urlView . '" title="Xem thông tin"><i class="fa fa-eye fa-lg pr-1" aria-hidden="true"></i></a>';
+            $permission = '<a href="' . $urlEdit . '" title="Edit"><i class="fa fa-pencil-square-o fa-lg pr-1" aria-hidden="true"></i></a>
+            <a href="' . $urlView . '" title="View"><i class="fa fa-eye fa-lg pr-1" aria-hidden="true"></i></a>';
         }
 
         $xhtmlUser .= $permission . '</td></tr>';

@@ -5,13 +5,13 @@
         // Email Address
         [
             'label' => Form::createLabel('email', 'Email Address'),
-            'input' => Form::createInput('email', 'email', '', "We'll never share your email with anyone else.")
+            'input' => Form::createInput('email', 'email', $_COOKIE['remember_email'] ?? '', "We'll never share your email with anyone else.")
         ],
 
         // Password
         [
             'label' => Form::createLabel('password', 'Password'),
-            'input' => Form::createInput('password', 'password', '')
+            'input' => Form::createInput('password', 'password', $_COOKIE['remember_pass'] ?? '')
         ],
 
         // Token
@@ -27,16 +27,17 @@
 <div class="content border border-secondary my-4 mx-3">
     <form method="POST" action="" class="m-4">
         <?php 
+        // Check if login failed => show alert & delete session flag
         if(!empty($_SESSION['login_failed'])){
             echo Helper::showError($_SESSION['login_failed']);
             unset($_SESSION['login_failed']);
         }
-            
         ?>
         <?= $formLogin ?>
+
         <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+            <input type="checkbox" class="form-check-input" id="remember-me" name="remember">
+            <label class="form-check-label" for="remember-me">Remember me</label>
         </div>
 
         <button type="submit" class="btn btn-primary">Sign in</button>

@@ -57,12 +57,12 @@ class HomeModel extends Model
 	{
 		switch ($option) {
 			case 'edit':
-				$arrParams['password'] = md5($arrParams['password']);
+				$arrParams['password'] = $arrParams['password'];
 				$this->update($arrParams, [['id', $paramsUrl['id']]]);
 				break;
 			case 'copy':
 				$arrParams['created_date'] 	= date('Y-m-d H:i:s');
-				$arrParams['password'] = md5($arrParams['password']);
+				$arrParams['password'] = $arrParams['password'];
 				$this->insert($arrParams);
 				break;
 		}
